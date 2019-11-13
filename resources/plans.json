@@ -1,0 +1,32 @@
+{
+  "free": {
+    "numberOfProjects": 20,
+    "privateAllowed": false,
+    "cost": 0
+  },
+  "small": {
+    "numberOfProjects": 20,
+    "privateAllowed": true,
+    "cost": 68
+  },
+  "medium": {
+    "numberOfProjects": 20,
+    "privateAllowed": true,
+    "cost": 152
+  },
+  "large": {
+    "numberOfProjects": 20,
+    "privateAllowed": true,
+    "cost": 346
+  },
+  "careables": {
+    "numberOfProjects": 1000000,
+    "privateAllowed": true,
+    "cost": 350
+  },
+  "admin": {
+    "numberOfProjects": 1000000,
+    "privateAllowed": true,
+    "cost": 350
+  }
+}
