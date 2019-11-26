@@ -19,16 +19,26 @@
 
 # Configuration
 
-1. Change the values DevelopmentConfig `./settings.py` to match you MongoDB and Welder setup.
-2. Create a database in MongoDB named 'wevolver'
+All settings variable can be found in the file `settings.py`. Multiple sets of keys can be created by creating alternate classes that contain the same instance variables as `DevelopmentConfig`. To use your created settings classes, change the class used in this line `app.config.from_object('settings.DevelopmentConfig')`
 
-# Deployment instructions
+## MongoDB
 
-1. Follow the instructions in [Wevolver Deployment](https://bitbucket.org/wevolver/deployment/src/master/)
+1. Create a database in MongoDB named 'wevolver'
 
-# Configure Google Custom Search
+## Welder
 
-# Configure Settings
+Welder-Api-V2 interfaces with another project called [Welder-Git-Server](https://github.com/Wevolver/Welder-Git-Server).
+
+In order to create projects, you'll need to configure Welder-Git-Server first. Once you've followed the steps to configure that project, take the domain and port on which it's being served and add that to the settings folder under `WELDER_BASE_URL`.
+
+
+## Configure Google Custom Search
+
+Google Custom Search is used as on-site search for projects.
+
+1. Create a Google Custom Search instance: https://cse.google.com/
+2. In the search engine settings, generate a programmatic search custom access key
+3. Add the key to the development settings in ./settings.py under SEARCH_KEY
 
 # Configure Mailchimp list
 
@@ -36,3 +46,7 @@
 - Add Private Key
 
 # Configure AWS Keys
+
+`awscli` is used to manage aws credentials. Welder-apiv2 uses s3 for both project images a LFS files. In order to upload either you'll need to configure [awscli](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)
+
+You'll also need to create an s3 bucket called `wevolver-project-images` ( this can be changed in `resources/projectImage.py`).
